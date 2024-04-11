@@ -46,6 +46,54 @@ public class ApplicationEx {
         System.out.println( 'a' / 2.0 );
         System.out.println( 'a' % 2.0 );
 
-        
+        //목차 3-1.
+        System.out.println( "hello" + "world" );
+        //System.out.println( "hello" - "world" );
+        //System.out.println( "hello" * "world" );
+        //System.out.println( "hello" / "world" );
+        //System.out.println( "hello" % "world" );
+
+        //목처 3-2.
+        System.out.println( "helloworld" + 123 );
+        System.out.println( "helloworld" + 123.456 );
+        System.out.println( "helloworld" + 'a' );
+        System.out.println( "helloworld" + true );
+
+        System.out.println( "123" + "456" );
+
+        //목차 4-1.
+        //System.out.println( true + false );
+        //System.out.println( true - false );
+        //System.out.println( true * false );
+        //System.out.println( true / false );
+        //System.out.println( true % false );
+
+        //목차 4-2.
+        //System.out.println( true + 1 );
+        //System.out.println( true - 1 );
+        //System.out.println( true * 1 );
+        //System.out.println( true / 2 );
+        //System.out.println( true % 2 );
+
+        //목차 4-3.
+        //System.out.println( true + 1.0 );
+        //System.out.println( true - 1.0 );
+        //System.out.println( true * 1.0 );
+        //System.out.println( true / 1.0 );
+        //System.out.println( true % 1.0 );
+
+        //목차 4-4.
+        //System.out.println( true + 'a' );
+        //System.out.println( true - 'a' );
+        //System.out.println( true * 'a' );
+        //System.out.println( true / 'a' );
+        //System.out.println( true % 'a' );
+
+        //목차 4-5.
+        //System.out.println( true + "a" );
+        //System.out.println( true - "a" );
+        //System.out.println( true * "a" );
+        //System.out.println( true / "a" );
+        //System.out.println( true % "a" );
     }
 }

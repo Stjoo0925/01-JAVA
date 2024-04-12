@@ -23,7 +23,6 @@ public class ApplicationEx {
         // 소수끼리의 사칙연산은 소수로 계산된다.
         System.out.println("");
 
-
         System.out.println("목차 1-3.");
         System.out.println( 123 + 0.5 );
         System.out.println( 123 - 0.5 );
@@ -32,7 +31,6 @@ public class ApplicationEx {
         System.out.println( 123 % 0.5 );
         // 정수와 소수의 사칙연산은 정수가 자동으로 변환되어 사칙연산된다.
         System.out.println("");
-
 
         System.out.println("목차 2-1.");
         System.out.println( 'a' + 'b' );
@@ -43,7 +41,6 @@ public class ApplicationEx {
         // 문자형 리터럴은 지정된 숫자로 변환되어 계산된다.
         System.out.println("");
 
-
         System.out.println("목차 2-2.");
         System.out.println( 'a' + 1 );
         System.out.println( 'a' - 1 );
@@ -53,7 +50,6 @@ public class ApplicationEx {
         // 마찬가지로 문자형 리터럴은 지정된 숫자로 변환되어 계산된다.
         System.out.println("");
 
-
         System.out.println("목차 2-3.");
         System.out.println( 'a' + 1.0 );
         System.out.println( 'a' - 1.0 );
@@ -62,7 +58,6 @@ public class ApplicationEx {
         System.out.println( 'a' % 2.0 );
         // 지정된 숫자로 변환된 문자형 리터럴이 소수로 자동변형되어 계산된다.
         System.out.println("");
-
 
         System.out.println("목차 3-1.");
         System.out.println( "hello" + "world" );

@@ -1,6 +1,6 @@
 package com.ohgiraffers.section01.literal;
 
-public class Application01 { // 스코프
+public class Application01 { // 스코프}
 
     public static void main(String[] args) {
 
@@ -20,5 +20,6 @@ public class Application01 { // 스코프
         System.out.println(false);
 
         //리터럴이란 값 자체를 의미한다.
+
     }
 }

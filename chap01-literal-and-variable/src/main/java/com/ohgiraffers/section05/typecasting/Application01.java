@@ -22,7 +22,5 @@ public class Application01 {
         *       2-1. 자동형변환이 적용되지 않는 경우 강제 형변환이 필요하다.
         */
 
-        byte bnum = 1;
-        short snum = 1;
     }
 }

@@ -21,10 +21,10 @@ public class Application02 {
         System.out.println("ch1이 대문자인지 확인하기 : " + (65 <= ch1 && ch1 <= 90) ); // 65, 90
 
         char ch3 = 'Y';
-        System.out.println("영문자 Y인지 확인하기 : " + (ch3 == 89) ); // Y의 아스키코드는 89
+        System.out.println("영문자 Y인지 확인하기 : " + ((ch3 == 89)||(ch3 == 121))); // Y의 아스키코드는 89
 
         char ch4 = 'y';
-        System.out.println("영문자 y인지 확인하기 : " + (ch4 == 121) ); // y의 아스키코드는 121
+        System.out.println("영문자 y인지 확인하기 : " + ((ch4 == 89)||(ch4 == 121))); // y의 아스키코드는 121
 
         // 복잡할 수 있음
         char ch5 = 'f';

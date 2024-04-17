@@ -6,11 +6,11 @@ public class Calculator2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int cul = 0;
 
         while (true) {
             System.out.print("1: 사칙연산, 2: 합계, 3:프로그램종료 : ");
             int option = sc.nextInt();
-            int cul = 0;
 
             if (option == 1) {
                 System.out.println("1. + \n2. -\n3. *\n4. /\n5. %");
@@ -22,7 +22,7 @@ public class Calculator2 {
                     int add2 = sc.nextInt();
                     int resultAdd = add1 + add2;
                     System.out.println("합은 : " + resultAdd);
-                    cul += cul + resultAdd;
+                    cul = cul + resultAdd;
 
 
                 } else if ( arithmetic == 2 ) {
@@ -31,7 +31,7 @@ public class Calculator2 {
                     int sub2 = sc.nextInt();
                     int resultSub = sub1 - sub2;
                     System.out.println("차는 : " + resultSub);
-                    cul += cul + resultSub;
+                    cul = cul + resultSub;
 
                 } else if ( arithmetic == 3 ) {
                     System.out.println("두 숫자를 입력하세요 : ");
@@ -39,7 +39,7 @@ public class Calculator2 {
                     int mul2 = sc.nextInt();
                     int resultMul = mul1 * mul2;
                     System.out.println("곱은 : " + resultMul);
-                    cul += cul + resultMul;
+                    cul = cul + resultMul;
 
                 } else if ( arithmetic == 4 ) {
                     System.out.println("두 숫자를 입력하세요 : ");
@@ -47,7 +47,7 @@ public class Calculator2 {
                     int div2 = sc.nextInt();
                     int resultDiv = div1 * div2;
                     System.out.println("나누기는 : " + resultDiv);
-                    cul += cul + resultDiv;
+                    cul = cul + resultDiv;
 
                 } else if ( arithmetic == 5 ) {
                     System.out.println("두 숫자를 입력하세요 : ");
@@ -55,7 +55,7 @@ public class Calculator2 {
                     int mod2 = sc.nextInt();
                     int resultMod = mod1 % mod2;
                     System.out.println("나머지는 : " + resultMod);
-                    cul += cul + resultMod;
+                    cul = cul + resultMod;
 
                 } else {
                     System.out.println("올바른 연산기호를 입력하세요.");

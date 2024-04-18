@@ -3,7 +3,7 @@ package com.ohgiraffers.section02.assignmant;
 public class Application01 {
 
     public static void main(String[] args) {
-        // int인 정수형의 변수를 num1로 선언하고 10의 값ㅇㄹ 할당한다.
+        // int인 정수형의 변수를 num1로 선언하고 10의 값을 할당한다.
         int num1 = 10;
         int num2 = 10;
         // num2라는 변수에 num1과 num2를 더해서 대입한다.

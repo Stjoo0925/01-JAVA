@@ -10,9 +10,20 @@ public class Application01 {
         aFor.testSimpleForStatement();
         */
 
-        Application01 mul_t = new Application01();
-        mul_t.pyramidRev();
 
+        Application01 mul_t = new Application01();
+        mul_t.info2();
+
+
+        /*
+        B_while bWhile = new B_while();
+        bWhile.multiplication_table();
+        */
+
+        /*
+        C_doWhile cDowhile = new C_doWhile(); // 참조자료형을 만드는 규칙
+        cDowhile.testSimpledoWhileStatement();
+        */
     }
 
     // 구구단을 만들어주세요
@@ -149,11 +160,13 @@ public class Application01 {
         for (int i = line; i >= 1; i--) {
             // 대문자 출력
             for (int j = 0; j < i; j++) {
-                System.out.print((char)('A' + j));
+                System.out.print((char)('A' + j ));
+                System.out.print(" ");
             }
             // 소문자 출력
             for (int j = i; j < line; j++) {
                 System.out.print((char)('a' + j));
+                System.out.print(" ");
             }
             System.out.println();
         }

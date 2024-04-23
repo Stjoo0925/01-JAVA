@@ -23,7 +23,6 @@ public class OrderController {
     }
 
     public void delete(int i) {
-        System.out.println("삭제할 상품의 번호를 입력해주세요.");
         orderService.removeNum(i);
     }
 

@@ -44,6 +44,7 @@ public class Application {
 
                 }
                 case 2 -> { // 주문 삭제
+                    System.out.print("삭제할 주문 번호를 입력하세요 :");
                     int removeNum = sc.nextInt();
                     sc.nextLine();
                     orderController.delete(removeNum);

@@ -8,17 +8,18 @@ public class OrderRepository {
 
     ArrayList orders = new ArrayList();
 
+    int oldNum = orders.size();
+
     public String order(OrderDTO orderDTO) {
 
-        int oldNum = orders.size(); // 0
 
         orders.add(orderDTO);
 
         if (oldNum >= orders.size()) {
-            return "등록실패";
+            return "실패";
         }
 
-        return "등록성공";
+        return "완료";
     }
 
     public void printVeiwAll() {
@@ -26,7 +27,11 @@ public class OrderRepository {
     }
 
     public void orderRemove(int removeNum) {
-        System.out.print("삭제할 주문번호를 입력해주세요 : ");
-        orders.remove(removeNum);
+        if (oldNum >= orders.size()) {
+            System.out.println("주문 목록이 없습니다.");
+        } else {
+            orders.remove(removeNum);
+        }
+
     }
 }

@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/chap03-method-and-api/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chap04-control-flow/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chap05-array/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chap06-class-and-object/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

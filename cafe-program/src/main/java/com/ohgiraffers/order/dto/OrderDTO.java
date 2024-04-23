@@ -30,10 +30,10 @@ public class OrderDTO {
 
     @Override
     public String toString() {
-        return "주문리스트 [" +
-                "메뉴이름 =' " + menuName + '\'' +
-                ", 가격 = " + price +
-                ", 수량 = " + quantity +
-                ']';
+        return "주문리스트 =>" +
+                " {메뉴이름 :' " + menuName + '\'' +
+                ", 가격 : " + price +
+                ", 수량 : " + quantity +
+                '}';
     }
 }

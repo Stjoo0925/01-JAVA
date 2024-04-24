@@ -20,58 +20,64 @@ public class Application {
             System.out.println("3. 주문 수정");
             System.out.println("4. 주문 상세조회");
             System.out.println("5. 주문 전체조회");
+            System.out.println("6. 주문 종료");
             System.out.print("어떤 메뉴를 동작하시겠습니까? : ");
-
             int menu = sc.nextInt();
             sc.nextLine();
-
-            OrderDTO orderDTO = new OrderDTO();
 
             switch (menu) {
                 case 1 -> { // 주문 등록
                     System.out.print("주문할 메뉴 이름을 등록해주세요 : ");
-                    orderDTO.setMenuName(sc.nextLine());
-
+                    String name = sc.nextLine();
                     System.out.print("수량을 입력해 주새요 : ");
                     int quantity = sc.nextInt();
-
+                    sc.nextLine();
                     System.out.print("가격을 입력해주세요 : ");
                     int price = sc.nextInt();
-
-                    orderDTO.setQuantity(quantity, price);
-
-                    result = orderController.order(orderDTO);
-
+                    sc.nextLine();
+                    OrderDTO orderDTO = new OrderDTO(name, quantity, price);
+                    orderController.order(orderDTO);
                 }
                 case 2 -> { // 주문 삭제
                     System.out.print("삭제할 주문 번호를 입력하세요 :");
                     int removeNum = sc.nextInt();
                     sc.nextLine();
-                    orderController.delete(removeNum);
-
+                    result = orderController.delete(removeNum);
+                    System.out.println(result);
                 }
                 case 3 -> { // 주문 수정
-                    orderController.correction();
-
+                    System.out.print("수정할 주문 번호 : ");
+                    int indexNum = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("메뉴 수정 : ");
+                    String reMenu = sc.nextLine();
+                    System.out.print("수량 수정 : ");
+                    int reQuantity = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("비용 수정 : ");
+                    int rePrice = sc.nextInt();
+                    sc.nextLine();
+                    OrderDTO reOrder = new OrderDTO(reMenu, reQuantity, rePrice);
+                    String correctionResult = orderController.correction(indexNum,reOrder);
                 }
                 case 4 -> { // 주문 상세조회
-                    orderController.detailedInquiry();
-
-
+                    System.out.print("검색할 주문 번호를 입력하세요 :");
+                    int searchNum = sc.nextInt();
+                    sc.nextLine();
+                    result = orderController.printSearch(searchNum);
+                    System.out.println(result);
                 }
                 case 5 -> { // 주문 전체조회
-                    orderController.viewAll();
-
+                    orderController.printAll();
+                }
+                case 6 -> {
+                    System.out.println("주문을 종료합니다.");
+                    order = false;
                 }
                 default -> {
                     System.out.println("잘못된 입력입니다.");
                 }
             }
-
-            System.out.println(result);
-
-            System.out.print("주문을 계속하시겠습니까?");
-            order = sc.nextBoolean();
         }
     }
 }

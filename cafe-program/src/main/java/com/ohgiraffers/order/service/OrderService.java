@@ -3,10 +3,12 @@ package com.ohgiraffers.order.service;
 import com.ohgiraffers.order.dao.OrderRepository;
 import com.ohgiraffers.order.dto.OrderDTO;
 
+import java.util.ArrayList;
+
 public class OrderService {
     //서비스 계층
     // 비지니스 로직 수행 및 데이터 베이스에 대한 리소스를 관리한다.
-    private OrderRepository orderRepository = new OrderRepository();
+    private final OrderRepository orderRepository = new OrderRepository();
 
     public String order(OrderDTO order) {
         if (!order.getMenuName().equals("아메리카노")) {
@@ -21,11 +23,25 @@ public class OrderService {
         return  result;
     }
 
-    public void printVeiwAll() {
-        orderRepository.printVeiwAll();
+    public OrderDTO correction(int indexNum, OrderDTO reOrder) {
+        return orderRepository.correction(indexNum, reOrder);
     }
 
-    public  void removeNum(int i) {
-        orderRepository.orderRemove(i);
+
+    public int removeNum(int i) {
+        if (orderRepository.orderRemove(i)) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    public OrderDTO printSearch(int searchNum) {
+
+        return orderRepository.printSearch(searchNum);
+    }
+
+    public ArrayList printVeiwAll() {
+        return orderRepository.printVeiwAll();
     }
 }

@@ -10,13 +10,14 @@ public class OrderRepository {
 
     int oldNum = orders.size();
 
-    public String order(OrderDTO orderDTO) {
-
-        orders.add(orderDTO);
-        if (oldNum >= orders.size()) {
-            return "실패";
+    public String order(OrderDTO[] order) {
+        for (OrderDTO orderDTO : order) {
+            orders.add(orderDTO);
         }
-        return "완료";
+        if (oldNum >= orders.size()) {
+            return "주문실패";
+        }
+        return "주문완료";
     }
 
     public OrderDTO correction(int indexNum, OrderDTO reOrderDTO) {
@@ -25,17 +26,16 @@ public class OrderRepository {
     }
 
     public boolean orderRemove(int removeNum) {
-        if (oldNum >= orders.size()) {
-            System.out.println("주문목록이 없습니다.");
-            return false;
-        } else {
+        if (!orders.isEmpty() && removeNum == 0) {
             orders.remove(removeNum);
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
 
     public OrderDTO printSearch(int searchNum) {
-        if (searchNum >= 0 && searchNum < orders.size()) {
+        if (!orders.isEmpty() && searchNum == 0) {
             return (OrderDTO) orders.get(searchNum);
         } else {
             return null;
@@ -43,6 +43,10 @@ public class OrderRepository {
     }
 
     public ArrayList printVeiwAll() {
-        return this.orders;
+        if (!orders.isEmpty()) {
+            return this.orders;
+        } else {
+            return null;
+        }
     }
 }

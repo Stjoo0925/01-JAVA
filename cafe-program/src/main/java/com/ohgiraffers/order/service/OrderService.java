@@ -1,3 +1,4 @@
+
 package com.ohgiraffers.order.service;
 
 import com.ohgiraffers.order.dao.OrderRepository;
@@ -10,16 +11,17 @@ public class OrderService {
     // 비지니스 로직 수행 및 데이터 베이스에 대한 리소스를 관리한다.
     private final OrderRepository orderRepository = new OrderRepository();
 
-    public String order(OrderDTO order) {
-        if (!order.getMenuName().equals("아메리카노")) {
-            return "주문 실패";
+    public String order(OrderDTO[] orders) {
+        for (OrderDTO order : orders) {
+            if (!order.getMenuName().equals("아메리카노")) {
+                return "주문 실패";
+            }
+            if (order.getPrice() <= 0 ) {
+                return "주문 실패";
+            }
         }
+        String result = orderRepository.order(orders);
 
-        if (order.getPrice() <= 0 ) {
-            return "주문 실패";
-        }
-
-        String result = orderRepository.order(order);
         return  result;
     }
 

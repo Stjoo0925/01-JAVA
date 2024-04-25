@@ -5,10 +5,10 @@ import com.ohgiraffers.order.dto.OrderDTO;
 
 import java.util.Scanner;
 
-public class Application {
+public class Application {  // 어플리케이션 클래스 시작
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {    // 메인 메소드시작
+        Scanner sc = new Scanner(System.in);    // 스캐너 호출
         boolean order = true;
         OrderController orderController = new OrderController();
         String result = "";
@@ -27,19 +27,26 @@ public class Application {
 
             switch (menu) {
                 case 1 -> { // 주문 등록
-                    System.out.print("주문할 메뉴 이름을 등록해주세요 : ");
-                    String name = sc.nextLine();
-                    System.out.print("수량을 입력해 주새요 : ");
-                    int quantity = sc.nextInt();
+                    System.out.print("몇개의 음료를 주문하시겠습니까? : ");
+                    int orderNum = sc.nextInt();
                     sc.nextLine();
-                    System.out.print("가격을 입력해주세요 : ");
-                    int price = sc.nextInt();
-                    sc.nextLine();
-                    OrderDTO orderDTO = new OrderDTO(name, quantity, price);
-                    orderController.order(orderDTO);
+                    OrderDTO[] orders = new OrderDTO[orderNum];
+                    for (int i = 0; i < orders.length; i++) {
+                        System.out.print("주문할 메뉴 이름을 등록해주세요 : ");
+                        String name = sc.nextLine();
+                        System.out.print("수량을 입력해 주새요 : ");
+                        int quantity = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("가격을 입력해주세요 : ");
+                        int price = sc.nextInt();
+                        sc.nextLine();
+                        orders[i] = new OrderDTO(name, quantity, price);
+                    }
+                    result = orderController.order(orders);
+                    System.out.println(result);
                 }
                 case 2 -> { // 주문 삭제
-                    System.out.print("삭제할 주문 번호를 입력하세요 :");
+                    System.out.print("삭제할 주문 번호를 입력하세요 : ");
                     int removeNum = sc.nextInt();
                     sc.nextLine();
                     result = orderController.delete(removeNum);
@@ -61,14 +68,15 @@ public class Application {
                     String correctionResult = orderController.correction(indexNum,reOrder);
                 }
                 case 4 -> { // 주문 상세조회
-                    System.out.print("검색할 주문 번호를 입력하세요 :");
+                    System.out.print("검색할 주문 번호를 입력하세요 : ");
                     int searchNum = sc.nextInt();
                     sc.nextLine();
                     result = orderController.printSearch(searchNum);
                     System.out.println(result);
                 }
                 case 5 -> { // 주문 전체조회
-                    orderController.printAll();
+                    result = orderController.printAll();
+                    System.out.println(result);
                 }
                 case 6 -> {
                     System.out.println("주문을 종료합니다.");

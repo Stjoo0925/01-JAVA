@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/chap05-array/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chap06-class-and-object/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cafe-program/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chap07-object-array/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

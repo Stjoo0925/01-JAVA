@@ -3,8 +3,6 @@ package com.ohgiraffers.order.controller;
 import com.ohgiraffers.order.dto.OrderDTO;
 import com.ohgiraffers.order.service.OrderService;
 
-import java.util.ArrayList;
-
 public class OrderController {
 
     private final OrderService orderService = new OrderService();
@@ -24,11 +22,11 @@ public class OrderController {
         return result;
     }
 
-    public String delete(int i) {
+    public String removeOrder(int i) {
         if(i < 0) {
             System.out.println("주문 목록은 음수가 될 수 없습니다.");
         }
-        int deletionResult = orderService.removeNum(i);
+        int deletionResult = orderService.removeOrder(i);
         if (deletionResult == 1) {
             return "주문이 성공적으로 삭제되었습니다.";
         } else if (deletionResult == -1) {
@@ -38,13 +36,28 @@ public class OrderController {
         }
     }
 
-    public String correction(int indexNum, OrderDTO reOrder) {
-        String result = String.valueOf(orderService.correction(indexNum, reOrder));
+    public String modifyOrder(int indexNum, OrderDTO reOrder) {
+        String result = String.valueOf(orderService.modifyOrder(indexNum, reOrder));
         return result;
     }
 
-    public String printSearch(int searchNum) {
-        OrderDTO searchOrder = orderService.printSearch(searchNum);
+    public String modifyOrderByMenuName(int indexNum, String reName) {
+        String result = String.valueOf(orderService.modifyOrderByMenuName(indexNum, reName));
+        return result;
+    }
+
+    public String modifyOrderByPrice(int indexNum, OrderDTO reOrder) {
+        String result = String.valueOf(orderService.modifyOrder(indexNum, reOrder));
+        return result;
+    }
+
+    public String modifyOrderByQuantity(int indexNum, OrderDTO reOrder) {
+        String result = String.valueOf(orderService.modifyOrder(indexNum, reOrder));
+        return result;
+    }
+
+    public String getOrder(int searchNum) {
+        OrderDTO searchOrder = orderService.getOrder(searchNum);
         if (searchOrder != null) {
             return searchOrder.toString();
         } else {

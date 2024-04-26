@@ -25,25 +25,37 @@ public class OrderService {
         return  result;
     }
 
-    public OrderDTO correction(int indexNum, OrderDTO reOrder) {
-        return orderRepository.correction(indexNum, reOrder);
-    }
-
-
-    public int removeNum(int i) {
-        if (orderRepository.orderRemove(i)) {
+    public int removeOrder(int i) {
+        if (orderRepository.removeOrder(i)) {
             return 1;
         } else {
             return -1;
         }
     }
 
-    public OrderDTO printSearch(int searchNum) {
+    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrder) {
+        return orderRepository.modifyOrder(indexNum, reOrder);
+    }
 
-        return orderRepository.printSearch(searchNum);
+    public OrderDTO modifyOrderByMenuName(int indexNum, String reName) {
+
+        return orderRepository.modifyOrderByMenuName(indexNum, reName);
+    }
+
+    public OrderDTO modifyOrderByPriceByPrice(int indexNum, OrderDTO rePrice) {
+        return orderRepository.modifyOrder(indexNum, rePrice);
+    }
+
+    public OrderDTO modifyOrderByQuantity(int indexNum, OrderDTO reQuantity) {
+        return orderRepository.modifyOrder(indexNum, reQuantity);
+    }
+
+    public OrderDTO getOrder(int searchNum) {
+
+        return orderRepository.getOrder(searchNum);
     }
 
     public ArrayList printVeiwAll() {
-        return orderRepository.printVeiwAll();
+        return orderRepository.getTotalOrder();
     }
 }

@@ -39,6 +39,15 @@ public class OrderDTO { // 데이터를 전달하기 쉽게 하기 위해 사용
         this.price = quantity * price;
     }
 
+    public OrderDTO (String menuName) {
+        this.menuName = menuName;
+    }
+
+    public OrderDTO (int price) {
+        this.price = price;
+    }
+
+
     public OrderDTO (String menuName, int price, int quantity) {
         this.menuName = menuName;
         this.price = price;

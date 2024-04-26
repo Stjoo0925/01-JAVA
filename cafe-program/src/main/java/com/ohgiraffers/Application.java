@@ -49,29 +49,64 @@ public class Application {  // 어플리케이션 클래스 시작
                     System.out.print("삭제할 주문 번호를 입력하세요 : ");
                     int removeNum = sc.nextInt();
                     sc.nextLine();
-                    result = orderController.delete(removeNum);
+                    result = orderController.removeOrder(removeNum);
                     System.out.println(result);
                 }
                 case 3 -> { // 주문 수정
                     System.out.print("수정할 주문 번호 : ");
                     int indexNum = sc.nextInt();
                     sc.nextLine();
-                    System.out.print("메뉴 수정 : ");
-                    String reMenu = sc.nextLine();
-                    System.out.print("수량 수정 : ");
-                    int reQuantity = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("비용 수정 : ");
-                    int rePrice = sc.nextInt();
-                    sc.nextLine();
-                    OrderDTO reOrder = new OrderDTO(reMenu, reQuantity, rePrice);
-                    String correctionResult = orderController.correction(indexNum,reOrder);
+                    boolean col = true;
+                    while (col) {
+                        System.out.print("1. 메뉴 수정 | 2. 수량 수정 | 3. 가격 수정 | 4. 전부 수정 | 5. 종료 : ");
+                        int menu2 = sc.nextInt();
+                        sc.nextLine();
+                        switch (menu2) {
+                            case 1 -> {
+                                System.out.print("메뉴 수정 : ");
+                                String reMenu = sc.nextLine();
+                                String correctionResult = orderController.modifyOrderByMenuName(indexNum,reMenu);
+                            }
+                            case 2 -> {
+                                System.out.print("수량 수정 : ");
+                                int reQuantity = sc.nextInt();
+                                sc.nextLine();
+                                OrderDTO reOrder = new OrderDTO(reQuantity);
+                                String correctionResult = orderController.modifyOrderByPrice(indexNum,reOrder);
+                            }
+                            case 3 -> {
+                                System.out.print("가격 수정 : ");
+                                int rePrice = sc.nextInt();
+                                sc.nextLine();
+                                OrderDTO reOrder = new OrderDTO(rePrice);
+                                String correctionResult = orderController.modifyOrderByQuantity(indexNum,reOrder);
+                            }
+                            case 4 -> {
+                                System.out.print("메뉴 수정 : ");
+                                String reMenu = sc.nextLine();
+                                System.out.print("수량 수정 : ");
+                                int reQuantity = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("가격 수정 : ");
+                                int rePrice = sc.nextInt();
+                                sc.nextLine();
+                                OrderDTO reOrder = new OrderDTO(reMenu, reQuantity, rePrice);
+                                String correctionResult = orderController.modifyOrder(indexNum,reOrder);
+                            }
+                            case 5 -> {
+                                col = false;
+                            }
+                            default -> {
+                                System.out.println("오류!");
+                            }
+                        }
+                    }
                 }
                 case 4 -> { // 주문 상세조회
                     System.out.print("검색할 주문 번호를 입력하세요 : ");
                     int searchNum = sc.nextInt();
                     sc.nextLine();
-                    result = orderController.printSearch(searchNum);
+                    result = orderController.getOrder(searchNum);
                     System.out.println(result);
                 }
                 case 5 -> { // 주문 전체조회

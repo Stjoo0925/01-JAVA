@@ -20,12 +20,7 @@ public class OrderRepository {
         return "주문완료";
     }
 
-    public OrderDTO correction(int indexNum, OrderDTO reOrderDTO) {
-        return (OrderDTO) orders.set(indexNum, reOrderDTO);
-
-    }
-
-    public boolean orderRemove(int removeNum) {
+    public boolean removeOrder(int removeNum) {
         if (!orders.isEmpty() && removeNum == 0) {
             orders.remove(removeNum);
             return true;
@@ -34,7 +29,27 @@ public class OrderRepository {
         }
     }
 
-    public OrderDTO printSearch(int searchNum) {
+    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrderDTO) {
+        return (OrderDTO) orders.set(indexNum, reOrderDTO);
+
+    }
+
+    public OrderDTO modifyOrderByMenuName(int indexNum, String reName) {
+        return (OrderDTO) orders.set(indexNum, reName);
+
+    }
+
+    public OrderDTO modifyOrderByPrice(int indexNum, int rePrice) {
+        return (OrderDTO) orders.set(indexNum, rePrice);
+
+    }
+
+    public OrderDTO modifyOrderByQuantity(int indexNum, int reQuantity) {
+        return (OrderDTO) orders.set(indexNum, reQuantity);
+
+    }
+
+    public OrderDTO getOrder(int searchNum) {
         if (!orders.isEmpty() && searchNum == 0) {
             return (OrderDTO) orders.get(searchNum);
         } else {
@@ -42,7 +57,7 @@ public class OrderRepository {
         }
     }
 
-    public ArrayList printVeiwAll() {
+    public ArrayList getTotalOrder() {
         if (!orders.isEmpty()) {
             return this.orders;
         } else {

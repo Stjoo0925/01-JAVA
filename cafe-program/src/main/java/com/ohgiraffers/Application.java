@@ -65,21 +65,19 @@ public class Application {  // 어플리케이션 클래스 시작
                             case 1 -> {
                                 System.out.print("메뉴 수정 : ");
                                 String reMenu = sc.nextLine();
-                                String correctionResult = orderController.modifyOrderByMenuName(indexNum,reMenu);
+                                orderController.modifyOrderByMenuName(indexNum,reMenu);
                             }
                             case 2 -> {
                                 System.out.print("수량 수정 : ");
                                 int reQuantity = sc.nextInt();
                                 sc.nextLine();
-                                OrderDTO reOrder = new OrderDTO(reQuantity);
-                                String correctionResult = orderController.modifyOrderByPrice(indexNum,reOrder);
+                                orderController.modifyOrderByPrice(indexNum,reQuantity);
                             }
                             case 3 -> {
                                 System.out.print("가격 수정 : ");
                                 int rePrice = sc.nextInt();
                                 sc.nextLine();
-                                OrderDTO reOrder = new OrderDTO(rePrice);
-                                String correctionResult = orderController.modifyOrderByQuantity(indexNum,reOrder);
+                                orderController.modifyOrderByQuantity(indexNum,rePrice);
                             }
                             case 4 -> {
                                 System.out.print("메뉴 수정 : ");
@@ -91,7 +89,7 @@ public class Application {  // 어플리케이션 클래스 시작
                                 int rePrice = sc.nextInt();
                                 sc.nextLine();
                                 OrderDTO reOrder = new OrderDTO(reMenu, reQuantity, rePrice);
-                                String correctionResult = orderController.modifyOrder(indexNum,reOrder);
+                                orderController.modifyOrder(indexNum,reOrder);
                             }
                             case 5 -> {
                                 col = false;

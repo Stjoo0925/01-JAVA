@@ -42,12 +42,12 @@ public class OrderService {
         return orderRepository.modifyOrderByMenuName(indexNum, reName);
     }
 
-    public OrderDTO modifyOrderByPriceByPrice(int indexNum, OrderDTO rePrice) {
-        return orderRepository.modifyOrder(indexNum, rePrice);
+    public OrderDTO modifyOrderByPrice(int indexNum, int Price) {
+        return orderRepository.modifyOrderByPrice(indexNum, Price);
     }
 
-    public OrderDTO modifyOrderByQuantity(int indexNum, OrderDTO reQuantity) {
-        return orderRepository.modifyOrder(indexNum, reQuantity);
+    public OrderDTO modifyOrderByQuantity(int indexNum, int Quantity) {
+        return orderRepository.modifyOrderByQuantity(indexNum, Quantity);
     }
 
     public OrderDTO getOrder(int searchNum) {

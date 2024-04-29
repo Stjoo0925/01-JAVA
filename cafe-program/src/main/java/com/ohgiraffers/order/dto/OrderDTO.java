@@ -30,11 +30,15 @@ public class OrderDTO { // 데이터를 전달하기 쉽게 하기 위해 사용
         return price;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity, int price) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
         this.price = quantity * price;
     }

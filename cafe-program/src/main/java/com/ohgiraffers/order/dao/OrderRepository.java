@@ -8,6 +8,8 @@ public class OrderRepository {
 
     private final ArrayList orders = new ArrayList();
 
+    OrderDTO orderDTO = new OrderDTO();
+
     int oldNum = orders.size();
 
     public String order(OrderDTO[] order) {
@@ -29,23 +31,32 @@ public class OrderRepository {
         }
     }
 
-    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrderDTO) {
-        return (OrderDTO) orders.set(indexNum, reOrderDTO);
+    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrder) {
+        return (OrderDTO) orders.set(indexNum, reOrder);
 
     }
 
-    public OrderDTO modifyOrderByMenuName(int indexNum, String reName) {
-        return (OrderDTO) orders.set(indexNum, reName);
+    public OrderDTO modifyOrderByMenuName(int indexNum, String name) {
+        if (!orders.isEmpty()) {
+            orderDTO.setMenuName(name);
+        }
+        return null;
 
     }
 
-    public OrderDTO modifyOrderByPrice(int indexNum, int rePrice) {
-        return (OrderDTO) orders.set(indexNum, rePrice);
+    public OrderDTO modifyOrderByPrice(int indexNum, int price) {
+        if (!orders.isEmpty()) {
+            orderDTO.setPrice(price);
+        }
+        return null;
 
     }
 
-    public OrderDTO modifyOrderByQuantity(int indexNum, int reQuantity) {
-        return (OrderDTO) orders.set(indexNum, reQuantity);
+    public OrderDTO modifyOrderByQuantity(int indexNum, int quantity) {
+        if (!orders.isEmpty()) {
+            orderDTO.setQuantity(quantity);
+        }
+        return null;
 
     }
 

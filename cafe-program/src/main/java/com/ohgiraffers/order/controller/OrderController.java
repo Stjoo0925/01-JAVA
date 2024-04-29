@@ -36,24 +36,20 @@ public class OrderController {
         }
     }
 
-    public String modifyOrder(int indexNum, OrderDTO reOrder) {
-        String result = String.valueOf(orderService.modifyOrder(indexNum, reOrder));
-        return result;
+    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrder) {
+        return orderService.modifyOrder(indexNum, reOrder);
     }
 
-    public String modifyOrderByMenuName(int indexNum, String reName) {
-        String result = String.valueOf(orderService.modifyOrderByMenuName(indexNum, reName));
-        return result;
+    public OrderDTO modifyOrderByMenuName(int indexNum, String reName) {
+        return orderService.modifyOrderByMenuName(indexNum, reName);
     }
 
-    public String modifyOrderByPrice(int indexNum, OrderDTO reOrder) {
-        String result = String.valueOf(orderService.modifyOrder(indexNum, reOrder));
-        return result;
+    public OrderDTO modifyOrderByPrice(int indexNum, int price) {
+        return orderService.modifyOrderByPrice(indexNum, price);
     }
 
-    public String modifyOrderByQuantity(int indexNum, OrderDTO reOrder) {
-        String result = String.valueOf(orderService.modifyOrder(indexNum, reOrder));
-        return result;
+    public OrderDTO modifyOrderByQuantity(int indexNum, int quantity) {
+        return orderService.modifyOrderByQuantity(indexNum, quantity);
     }
 
     public String getOrder(int searchNum) {

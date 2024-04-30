@@ -52,10 +52,10 @@ public class OrderDTO { // 데이터를 전달하기 쉽게 하기 위해 사용
     }
 
 
-    public OrderDTO (String menuName, int price, int quantity) {
+    public OrderDTO (String menuName, int quantity, int price) {
         this.menuName = menuName;
-        this.price = price;
         this.quantity = quantity;
+        this.price = price;
     }
 
     public OrderDTO () {

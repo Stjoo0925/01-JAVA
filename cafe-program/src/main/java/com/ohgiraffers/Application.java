@@ -64,32 +64,31 @@ public class Application {  // 어플리케이션 클래스 시작
                         switch (menu2) {
                             case 1 -> {
                                 System.out.print("메뉴 수정 : ");
-                                String reMenu = sc.nextLine();
-                                orderController.modifyOrderByMenuName(indexNum,reMenu);
+                                String Menu = sc.nextLine();
+                                orderController.modifyOrderByMenuName(indexNum,Menu);
                             }
                             case 2 -> {
                                 System.out.print("수량 수정 : ");
-                                int reQuantity = sc.nextInt();
+                                int Quantity = sc.nextInt();
                                 sc.nextLine();
-                                orderController.modifyOrderByPrice(indexNum,reQuantity);
+                                orderController.modifyOrderByQuantity(indexNum,Quantity);
                             }
                             case 3 -> {
                                 System.out.print("가격 수정 : ");
-                                int rePrice = sc.nextInt();
+                                int Price = sc.nextInt();
                                 sc.nextLine();
-                                orderController.modifyOrderByQuantity(indexNum,rePrice);
+                                orderController.modifyOrderByPrice(indexNum,Price);
                             }
                             case 4 -> {
                                 System.out.print("메뉴 수정 : ");
-                                String reMenu = sc.nextLine();
+                                String Menu = sc.nextLine();
                                 System.out.print("수량 수정 : ");
-                                int reQuantity = sc.nextInt();
+                                int Quantity = sc.nextInt();
                                 sc.nextLine();
                                 System.out.print("가격 수정 : ");
-                                int rePrice = sc.nextInt();
+                                int Price = sc.nextInt();
                                 sc.nextLine();
-                                OrderDTO reOrder = new OrderDTO(reMenu, reQuantity, rePrice);
-                                orderController.modifyOrder(indexNum,reOrder);
+                                orderController.modifyOrder(indexNum,Menu, Quantity, Price);
                             }
                             case 5 -> {
                                 col = false;
@@ -108,7 +107,7 @@ public class Application {  // 어플리케이션 클래스 시작
                     System.out.println(result);
                 }
                 case 5 -> { // 주문 전체조회
-                    result = orderController.printAll();
+                    result = orderController.veiwAllOrder();
                     System.out.println(result);
                 }
                 case 6 -> {

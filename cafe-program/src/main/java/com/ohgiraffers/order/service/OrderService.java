@@ -10,6 +10,7 @@ public class OrderService {
     //서비스 계층
     // 비지니스 로직 수행 및 데이터 베이스에 대한 리소스를 관리한다.
     private final OrderRepository orderRepository = new OrderRepository();
+    OrderDTO orderDTO = new OrderDTO();
 
     public String order(OrderDTO[] orders) {
         for (OrderDTO order : orders) {
@@ -33,21 +34,40 @@ public class OrderService {
         }
     }
 
-    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrder) {
-        return orderRepository.modifyOrder(indexNum, reOrder);
+    public OrderDTO modifyOrderByMenuName(int indexNum, String name) {
+        OrderDTO modifiedOrder = orderRepository.modifyOrderByMenuName(indexNum, name);
+        if (modifiedOrder != null) {
+            return modifiedOrder;
+        } else {
+            return null;
+        }
     }
 
-    public OrderDTO modifyOrderByMenuName(int indexNum, String reName) {
-
-        return orderRepository.modifyOrderByMenuName(indexNum, reName);
+    public OrderDTO modifyOrderByQuantity(int indexNum, int quantity) {
+        OrderDTO modifiedOrder = orderRepository.modifyOrderByQuantity(indexNum, quantity);
+        if (modifiedOrder != null) {
+            return modifiedOrder;
+        } else {
+            return null;
+        }
     }
 
-    public OrderDTO modifyOrderByPrice(int indexNum, int Price) {
-        return orderRepository.modifyOrderByPrice(indexNum, Price);
+    public OrderDTO modifyOrderByPrice(int indexNum, int price) {
+        OrderDTO modifiedOrder = orderRepository.modifyOrderByPrice(indexNum, price);
+        if (modifiedOrder != null) {
+            return modifiedOrder;
+        } else {
+            return null;
+        }
     }
 
-    public OrderDTO modifyOrderByQuantity(int indexNum, int Quantity) {
-        return orderRepository.modifyOrderByQuantity(indexNum, Quantity);
+    public OrderDTO modifyOrder(int indexNum, String name, int quantity, int price) {
+        OrderDTO modifiedOrder = orderRepository.modifyOrder(indexNum, name, quantity, price);
+        if (modifiedOrder != null) {
+            return modifiedOrder;
+        } else {
+            return null;
+        }
     }
 
     public OrderDTO getOrder(int searchNum) {
@@ -55,7 +75,7 @@ public class OrderService {
         return orderRepository.getOrder(searchNum);
     }
 
-    public ArrayList printVeiwAll() {
+    public ArrayList veiwAllOrder() {
         return orderRepository.getTotalOrder();
     }
 }

@@ -36,20 +36,20 @@ public class OrderController {
         }
     }
 
-    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrder) {
-        return orderService.modifyOrder(indexNum, reOrder);
-    }
-
     public OrderDTO modifyOrderByMenuName(int indexNum, String reName) {
         return orderService.modifyOrderByMenuName(indexNum, reName);
+    }
+
+    public OrderDTO modifyOrderByQuantity(int indexNum, int quantity) {
+        return orderService.modifyOrderByQuantity(indexNum, quantity);
     }
 
     public OrderDTO modifyOrderByPrice(int indexNum, int price) {
         return orderService.modifyOrderByPrice(indexNum, price);
     }
 
-    public OrderDTO modifyOrderByQuantity(int indexNum, int quantity) {
-        return orderService.modifyOrderByQuantity(indexNum, quantity);
+    public OrderDTO modifyOrder(int indexNum, String name, int quantity, int price) {
+        return orderService.modifyOrder(indexNum, name, quantity, price);
     }
 
     public String getOrder(int searchNum) {
@@ -61,11 +61,11 @@ public class OrderController {
         }
     }
 
-    public String printAll() {
-        if (orderService.printVeiwAll() == null) {
+    public String veiwAllOrder() {
+        if (orderService.veiwAllOrder() == null) {
             return "주문 내역이 없습니다.";
         }
-        String AllOrder = String.valueOf(orderService.printVeiwAll());
+        String AllOrder = String.valueOf(orderService.veiwAllOrder());
         return AllOrder;
     }
 }

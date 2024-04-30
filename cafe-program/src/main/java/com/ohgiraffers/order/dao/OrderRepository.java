@@ -23,7 +23,7 @@ public class OrderRepository {
     }
 
     public boolean removeOrder(int removeNum) {
-        if (!orders.isEmpty() && removeNum == 0) {
+        if (!orders.isEmpty()) {
             orders.remove(removeNum);
             return true;
         } else {
@@ -31,33 +31,42 @@ public class OrderRepository {
         }
     }
 
-    public OrderDTO modifyOrder(int indexNum, OrderDTO reOrder) {
-        return (OrderDTO) orders.set(indexNum, reOrder);
-
-    }
-
     public OrderDTO modifyOrderByMenuName(int indexNum, String name) {
-        if (!orders.isEmpty()) {
-            orderDTO.setMenuName(name);
+        if (indexNum >= 0 && indexNum < orders.size()) {
+            OrderDTO order = (OrderDTO) orders.get(indexNum);
+            order.setMenuName(name);
+            return order;
         }
         return null;
-
-    }
-
-    public OrderDTO modifyOrderByPrice(int indexNum, int price) {
-        if (!orders.isEmpty()) {
-            orderDTO.setPrice(price);
-        }
-        return null;
-
     }
 
     public OrderDTO modifyOrderByQuantity(int indexNum, int quantity) {
-        if (!orders.isEmpty()) {
-            orderDTO.setQuantity(quantity);
+        if (indexNum >= 0 && indexNum < orders.size()) {
+            OrderDTO order = (OrderDTO) orders.get(indexNum);
+            order.setQuantity(quantity);
+            return order;
         }
         return null;
+    }
 
+    public OrderDTO modifyOrderByPrice(int indexNum, int price) {
+        if (indexNum >= 0 && indexNum < orders.size()) {
+            OrderDTO order = (OrderDTO) orders.get(indexNum);
+            order.setPrice(price);
+            return order;
+        }
+        return null;
+    }
+
+    public OrderDTO modifyOrder(int indexNum, String name, int quantity, int price) {
+        if (indexNum >= 0 && indexNum < orders.size()) {
+            OrderDTO order = (OrderDTO) orders.get(indexNum);
+            order.setMenuName(name);
+            order.setQuantity(quantity);
+            order.setPrice(price);
+            return order;
+        }
+        return null;
     }
 
     public OrderDTO getOrder(int searchNum) {
@@ -75,4 +84,5 @@ public class OrderRepository {
             return null;
         }
     }
+
 }

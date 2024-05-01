@@ -14,6 +14,8 @@
       <sourceFolder url="file://$MODULE_DIR$/chap08-inheritance/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chap09-polymorpshsim/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chap11-generics/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cafe_program2/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chap12-collection/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

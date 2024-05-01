@@ -2,7 +2,7 @@ package com.ohgiraffers.secion01.list.run;
 
 import java.util.*;
 
-public class Application {
+public class Application01 {
 
     public static void main(String[] args) {
 

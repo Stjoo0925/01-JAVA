@@ -1,0 +1,6 @@
+#jdbc Driver
+#Wed May 01 15:35:34 KST 2024
+driver=com.mysql.cj.jdbc.Driver
+password=1234
+url=jdbc\:mysql\://localhost\:3306/falcon
+user=falcon
